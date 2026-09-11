@@ -1,0 +1,21 @@
+body {
+    background-color: #651212;
+    color: beige;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+}
+
+a {
+  color:#d5c5b3; /* Cor azul para links normais */
+  text-decoration: underline; /* Remove o sublinhado, opcional */
+  transition: all 0.3s ease; /* Efeito de transição suave */
+}
+a:visited {
+  color: #fa8900; /* Cor laranja para links visitados */
+}
+a:hover {
+  color: #f40cd5; /* Cor rosa ao passar o mouse */
+}
+a:active {
+  color: #27cc4d; /* Cor verde quando clicado */
+}
