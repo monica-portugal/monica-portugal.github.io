@@ -1,0 +1,57 @@
+
+*{
+    margin: 0%;
+    box-sizing: border-box;
+}
+header{grid-area: cabeçalho}
+main{grid-area: principal}
+aside{grid-area: lateral}
+footer{grid-area: rodape}
+
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 60fr 40fr;
+    grid-template-rows: 15fr, 90fr, 10fr;
+
+    grid-template-areas:
+    "cabeçalho cabeçalho"
+    "principal lateral"
+    "rodape rodape";
+}
+
+header{
+    background-color:darkslategray;
+    color:white;
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+main{
+    background-color: firebrick;
+     color:white;
+
+}
+
+main section {
+  background-color: #d16969;
+  color: white;
+  border: 1px solid black;
+  padding: 15px;
+  margin: 10px;
+}
+
+aside{
+    background-color: darkolivegreen;
+     color:white;
+     padding: 10px;
+}
+
+footer{
+    background-color: rgb(63, 162, 63);
+     color:black;
+     align-content: center;
+     padding: 10px;
+}
