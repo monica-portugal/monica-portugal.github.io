@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cidade - Multimédia</title>
+    <link rel="stylesheet" href="styless.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Roma</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="local.html">Localização</a>
+        <a href="multimedia.html">Multimédia</a>
+        <a href="info.html">Informação</a>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Multimédia</h2>
+      <p>Nesta página encontra conteúdos multimédia.</p>
+
+      <!-- Links Âncora atualizados -->
+      <p class="ancoras">
+        <a href="#fotografias">Fotografias</a> | <a href="#video">Vídeo</a> |
+        <a href="#poema">Poema</a> |
+        <a href="#emblematica">Vista Emblemática</a> |
+        <a href="#video-fundo">Vídeo de Fundo</a> |
+        <a href="#paralaxe">Paralaxe</a>
+      </p>
+
+      <!-- 1. Secção Fotografias -->
+      <section id="fotografias" class="sec-multimedia sec-fotos">
+        <h3>Fotografias</h3>
+        <div class="fotografias">
+          <img src="imagens/multimediaRoma.jpg" alt="vista cidade" />
+          <img src="imagens/multimediaRoma1.avif" alt="eletrico" />
+          <img src="imagens/multimediaRoma2.avif" alt="rua Augusta" />
+          <img src="imagens/multimediaRoma3.webp" alt="Castelo" />
+          <img src="imagens/multimediaRoma4.jpg" alt="Tejo" />
+          <img src="imagens/multimediaRoma5.jpg" alt="Praça Comércio" />
+          <img src="imagens/multimediaRoma6.jpg" alt="Baixa" />
+          <img src="imagens/multimediaRoma7.jpg" alt="Santos Populares" />
+        </div>
+      </section>
+
+      <!-- 2. Secção Vídeo (YouTube) -->
+      <section id="video" class="sec-multimedia sec-video">
+        <h3>Vídeo</h3>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/oSexfR0Ubzw?si=-nVlDifMjqljrNbh"
+          title="YouTube video player"
+          frameborder="0"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </section>
+
+      <!-- 3. Secção Poesia -->
+      <section id="poema" class="sec-multimedia sec-poesia">
+        <h3>Poesia</h3>
+        <div class="poema">
+          <p>Entre sete colinas ergue-se a história,</p>
+          <p>Onde o Tibre corre lento a murmurar,</p>
+          <p>No Coliseu ainda ecoa a antiga glória,</p>
+          <p>Sob a luz dourada do entardecer no ar.</p>
+          <p>Nas águas de Trevi lança-se um desejo,</p>
+          <p>Cada pedra guarda um segredo milenar,</p>
+          <p>Em cada praça um encanto que eu vejo,</p>
+          <p>Roma eterna, impossível não te amar.</p>
+        </div>
+      </section>
+
+      <!-- 4. Secção Fotografia Emblemática -->
+      <section id="emblematica" class="sec-emblematica">
+        <img src="imagens/multimediaRoma.jpg" alt="Roma Emblemática" />
+        <p class="frase-emblematica">
+          "Todos os caminhos vão dar a Roma — A Cidade Eterna"
+        </p>
+      </section>
+
+      <!-- 5. NOVA SECÇÃO: Vídeo de Fundo (Pixabay) -->
+      <section id="video-fundo" class="sec-video-fundo">
+        <video autoplay muted loop playsinline>
+          <!-- Se descarregares do Pixabay para a pasta imagens, usa a 1ª linha: -->
+          <source src="imagens/51131-463106379_medium.mp4" type="video/mp4" />
+          <!-- Vídeo de reserva online caso ainda não tenhas o ficheiro na pasta: -->
+          <source
+            src="https://cdn.pixabay.com/video/2020/05/25/40130-424930032_large.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="caixa-sobre-video">
+          <h3>Roma em Movimento</h3>
+          <p>
+            Sinta a atmosfera única das ruas, praças e monumentos históricos da
+            capital italiana.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. NOVA SECÇÃO: Efeito Paralaxe -->
+      <section id="paralaxe" class="sec-paralaxe">
+        <div class="caixa-paralaxe">
+          <h3>Efeito Paralaxe — A História que Permanece</h3>
+          <p>
+            Faça scroll na página: a imagem de fundo mantém-se fixa enquanto o
+            conteúdo desliza suavemente por cima.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>DIW 2026</p>
+    </footer>
+  </body>
+</html>

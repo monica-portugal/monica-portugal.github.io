@@ -1,23 +1,266 @@
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+   ========================================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Deslize suave ao clicar nas âncoras */
+}
+
 body {
-    background-color: #651212;
-    color: beige;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-
+  margin: 0;
+  padding: 0;
+  background-color: #651212;
+  color: beige;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-a {
-  color:#d5c5b3; /* Cor azul para links normais */
-  text-decoration: underline; /* Remove o sublinhado, opcional */
-  transition: all 0.3s ease; /* Efeito de transição suave */
-}
-a:visited {
-  color: #fa8900; /* Cor laranja para links visitados */
-}
-a:hover {
-  color: #f40cd5; /* Cor rosa ao passar o mouse */
-}
-a:active {
-  color: #27cc4d; /* Cor verde quando clicado */
+/* Cada secção ocupa 100vh (100% da altura do ecrã) como pedido */
+section {
+  min-height: 100vh;
+  padding: 40px 20px;
 }
 
-img{width: 300px;};
+/* =========================================
+   1. SECÇÃO HERÓI (#inicio)
+   ========================================= */
+#inicio {
+  position: relative; /* Permite posicionar o texto motivacional lá dentro */
+  /* Imagem de fundo escurecida para o texto ler-se perfeitamente (podes trocar o URL por uma foto tua!) */
+  background-image: linear-gradient(rgba(45, 8, 8, 0.75), rgba(101, 18, 18, 0.85)),
+                    url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;       /* Requisito: cobre todo o elemento sem repetir */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Barra de topo com Logo e Menu */
+.hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fa8900;
+  letter-spacing: 2px;
+}
+
+/* Código pedido no guião para o menu da imagem do herói */
+nav ul {
+  list-style: none;   /* Remove os bullets */
+  padding: 0;         /* Remove o recuo interno */
+  margin: 0;          /* Remove o espaço externo */
+  display: flex;      /* Alinha os itens em linha */
+  gap: 1.5rem;        /* Espaçamento entre os links */
+}
+
+nav a {
+  text-decoration: none; /* Remove o sublinhado dos links */
+  color: inherit;        /* Herda a cor do elemento pai */
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #fa8900;
+}
+
+/* Texto motivacional posicionado com a propriedade position */
+.hero-texto {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  max-width: 600px;
+}
+
+.hero-texto h1 {
+  font-size: 3rem;
+  line-height: 1.15;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.hero-texto h1 span {
+  color: #fa8900; /* Destaque dourado/laranja */
+}
+
+.hero-texto p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #f5e6c8;
+}
+
+/* Botão Call to Action (CTA) */
+.btn-cta {
+  display: inline-block;
+  background-color: #fa8900;
+  color: #2b0808;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.05rem;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: #ff9d26;
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   2. SECÇÃO PROJETOS (#projetos) - Flexbox
+   ========================================= */
+#projetos {
+  background-color: #f7e9dc; /* Cor de fundo diferente (pêssego/bege suave como no exemplo) */
+  color: #3b1111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentor-seccao {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#projetos h2 {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+
+.subtitulo {
+  color: #7a4a4a;
+  margin-bottom: 40px;
+}
+
+/* Contentor Flex para os cartões */
+.cartoes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Estilo de cada Cartão */
+.cartao {
+  background-color: #f4b6c2; /* Rosa suave inspirado no exemplo do guião */
+  background: linear-gradient(135deg, #8a1c1c, #651212); /* Em tom bordô elegante para combinar com o teu tema */
+  color: beige;
+  text-decoration: none;
+  width: 380px;
+  padding: 25px 30px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(250, 137, 0, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cartao:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  border-color: #fa8900;
+}
+
+.cartao h3 {
+  margin: 0 0 10px 0;
+  color: #fa8900;
+  font-size: 1.4rem;
+}
+
+.cartao p {
+  margin: 0;
+  font-size: 1rem;
+  color: #f5e6c8;
+}
+
+/* =========================================
+   3. SECÇÃO DISCIPLINA (#cadeira) - @media query
+   ========================================= */
+#cadeira {
+  background-color: #4a0c0c; /* 3ª cor de fundo diferente */
+  color: beige;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Layout no Computador (Desktop): Lado a lado */
+.diw-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.diw-texto {
+  flex: 1;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.diw-texto h2 {
+  color: #fa8900;
+  font-size: 2rem;
+}
+
+.diw-texto a {
+  color: #fa8900;
+  text-decoration: underline;
+}
+
+.diw-imagem {
+  flex: 1;
+  text-align: center;
+}
+
+.diw-imagem img {
+  width: 100%;
+  max-width: 380px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 16px;
+}
+
+/* @media query pedida: no telemóvel fica um por baixo do outro! */
+@media (max-width: 768px) {
+  .diw-layout {
+    flex-direction: column; /* Passa a coluna (um debaixo do outro) */
+    text-align: center;
+  }
+
+  .diw-texto ul {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .hero-texto {
+    left: 5%;
+    right: 5%;
+  }
+
+  .hero-texto h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Rodapé */
+footer {
+  background-color: #2b0808;
+  color: #d5c5b3;
+  text-align: center;
+  padding: 18px;
+}

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cidade - Informações</title>
+    <link rel="stylesheet" href="styless.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Roma</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="local.html">Localização</a>
+        <a href="multimedia.html">Multimédia</a>
+        <a href="info.html">Informação</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Contentor 2D com CSS Grid -->
+      <div class="info-grid">
+        <!-- 1. Cabeçalho da Grelha -->
+        <div class="area-topo">
+          <h2>Informações</h2>
+          <p>
+            Nesta página encontram-se dados demográficos, geográficos e
+            curiosidades sobre a cidade de Roma organizados num layout em grelha
+            2D.
+          </p>
+        </div>
+
+        <!-- 2. Imagem Vertical (Estilo Hero Image à esquerda como no diagrama) -->
+        <div class="area-img-destaque">
+          <img
+            src="imagens/multimediaRoma.jpg"
+            alt="Coliseu de Roma - Pixabay"
+          />
+        </div>
+
+        <!-- 3. Tabela de Dados (Conteúdo Principal à direita) -->
+        <section class="area-tabela">
+          <h3>Dados sobre Roma</h3>
+          <table border="1">
+            <tr>
+              <th rowspan="2">Demografia</th>
+              <td>População</td>
+              <td>2.751.747 hab</td>
+            </tr>
+            <tr>
+              <td>Densidade populacional</td>
+              <td>2141 hab/km<sup>2</sup></td>
+            </tr>
+            <tr>
+              <th rowspan="3">Geografia</th>
+              <td>Área</td>
+              <td>1285 km<sup>2</sup></td>
+            </tr>
+            <tr>
+              <td>Região</td>
+              <td>Lácio (Lazio)</td>
+            </tr>
+            <tr>
+              <td>País</td>
+              <td>Itália</td>
+            </tr>
+            <tr>
+              <th>Website</th>
+              <td colspan="2">
+                <a href="https://www.comune.roma.it" target="_blank"
+                  >www.comune.roma.it</a
+                >
+              </td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- 4. Lista de 5 Curiosidades -->
+        <section class="area-curiosidades">
+          <h3>5 Curiosidades sobre Roma</h3>
+          <ul>
+            <li>
+              <strong>A Fonte de Trevi recolhe milhares de euros:</strong> Todos
+              os dias os turistas atiram cerca de 3.000€ em moedas para a
+              Fontana di Trevi, valor que é doado a instituições de caridade.
+            </li>
+            <li>
+              <strong>Uma cidade dentro de outra cidade:</strong> Roma é a única
+              cidade do mundo que tem um país independente inteiro dentro do seu
+              território — o Estado da Cidade do Vaticano.
+            </li>
+            <li>
+              <strong>Gatos são património biocultural:</strong> Em Roma, existe
+              uma lei que protege os gatos vadios, permitindo-lhes viver
+              livremente nas ruínas históricas, como no Largo di Torre
+              Argentina.
+            </li>
+            <li>
+              <strong>Mais de 2.000 fontes:</strong> A cidade conta com mais de
+              duas mil fontes, sendo que centenas delas (conhecidas como
+              <em>nasoni</em>) fornecem água potável gratuita 24 horas por dia.
+            </li>
+            <li>
+              <strong>A primeira universidade e centro comercial:</strong> Os
+              Mercados de Trajano, na Roma Antiga, são considerados pelos
+              historiadores o primeiro "centro comercial" coberto do mundo.
+            </li>
+          </ul>
+        </section>
+
+        <!-- 5. Galeria de Imagens Relacionadas (em baixo, como no exemplo do slide) -->
+        <div class="area-galeria-extra">
+          <img src="imagens/multimediaRoma3.webp" alt="Monumento Roma" />
+          <img src="imagens/multimediaRoma5.jpg" alt="Praça em Roma" />
+        </div>
+
+        <!-- 6. Caixa de Nota / Destaque Lateral -->
+        <aside class="area-nota">
+          <h3>Dica de Viagem</h3>
+          <p>
+            A melhor altura para visitar Roma é na primavera (abril a maio) ou
+            no outono (setembro a outubro), evitando o calor intenso de agosto.
+          </p>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <p>DIW 2026</p>
+    </footer>
+  </body>
+</html>
