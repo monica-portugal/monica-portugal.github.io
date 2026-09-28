@@ -49,7 +49,7 @@ section {
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #fa8900;
+  color: #f7f6f6;
   letter-spacing: 2px;
 }
 
@@ -176,7 +176,7 @@ nav a:hover {
 
 .cartao h3 {
   margin: 0 0 10px 0;
-  color: #fa8900;
+  color: #f6f5f3;
   font-size: 1.4rem;
 }
 
@@ -218,7 +218,7 @@ nav a:hover {
 }
 
 .diw-texto a {
-  color: #fa8900;
+  color: #f2efec;
   text-decoration: underline;
 }
 
@@ -263,4 +263,90 @@ footer {
   color: #d5c5b3;
   text-align: center;
   padding: 18px;
+}
+
+/* =========================================
+   PÁGINA DE TUTORIAIS E CODEPENS (Sem divs extra)
+   ========================================= */
+.topo-tutoriais {
+  background-color: #2b0808;
+  padding: 15px 40px;
+  border-bottom: 2px solid #fa8900;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Secção 1: Videotutoriais */
+#videotutoriais {
+  background-color: #651212;
+  color: beige;
+  padding: 50px 8%;
+}
+
+#videotutoriais h2 {
+  font-size: 2.2rem;
+  color: #eeecea;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.grelha-tutoriais {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+/* Secção 2: CodePens (A própria <section> é a grelha!) */
+#codepens {
+  background-color: #f7e9dc;
+  color: #3b1111;
+  padding: 50px 8%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  align-content: start;
+}
+
+/* Faz o título <h2> ocupar as 2 colunas no topo da secção */
+#codepens h2 {
+  grid-column: 1 / -1;
+  font-size: 2.2rem;
+  margin: 0 0 10px 0;
+}
+
+/* Cartões (<article>) de Vídeos e CodePens */
+.cartao-tutorial {
+  background-color: #2b0808;
+  color: beige;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(250, 137, 0, 0.3);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cartao-tutorial h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #e9e7e4;
+  font-size: 1.2rem;
+}
+
+.cartao-tutorial iframe {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Responsividade no telemóvel */
+@media (max-width: 768px) {
+  .topo-tutoriais {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .grelha-tutoriais,
+  #codepens {
+    grid-template-columns: 1fr;
+  }
 }
