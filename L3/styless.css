@@ -1,27 +1,27 @@
-/* =========================================
-   1. ESTRUTURA GERAL (Estilo Roma Imperial)
-   ========================================= */
+/* =========================================================
+   1. ESTRUTURA GERAL E COMUM (Todas as páginas)
+   ========================================================= */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #ebe5d9; /* Cor de pedra/mármore suave no fundo da página */
-  color: #2b1b17;            /* Texto escuro para leitura perfeita */
-  font-family: 'Georgia', 'Times New Roman', serif; /* Letra clássica estilo romano */
-  max-width: 1000px;         /* Agrupa o site no centro como na imagem do guião */
-  margin: 20px auto;         /* Centra o site todo no ecrã */
+  background-color: #ebe5d9;
+  color: #2b1b17;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  max-width: 1000px;
+  margin: 20px auto;
   padding: 0 15px;
 }
 
-/* Topo com o nome da cidade (Substitui o verde do exemplo por Vermelho Imperial) */
+/* Topo e Navegação */
 header {
-  background-color: #7a1c1c; /* Vermelho Romano */
-  color: #f5e6c8;            /* Dourado claro */
+  background-color: #7a1c1c;
+  color: #f5e6c8;
   text-align: center;
   padding: 22px;
-  border-radius: 10px 10px 0 0; /* Arredonda os cantos de cima */
-  border-bottom: 3px solid #d4af37; /* Linha fina dourada a separar */
+  border-radius: 10px 10px 0 0;
+  border-bottom: 3px solid #d4af37;
 }
 
 header h1 {
@@ -31,9 +31,8 @@ header h1 {
   text-transform: uppercase;
 }
 
-/* Barra de Navegação escura */
 nav {
-  background-color: #2b1b17; /* Castanho/Preto muito escuro */
+  background-color: #2b1b17;
   text-align: center;
   padding: 12px;
 }
@@ -48,11 +47,36 @@ nav a {
 }
 
 nav a:hover {
-  color: #d4af37; /* Fica dourado ao passar o rato */
+  color: #d4af37;
   text-decoration: underline;
 }
 
-/* Imagem principal de destaque debaixo do menu */
+/* Conteúdo Principal e Textos */
+main {
+  background-color: #ffffff;
+  margin: 15px 0;
+  padding: 25px 30px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h2, h3 {
+  color: #7a1c1c;
+  border-bottom: 1px solid #ebe5d9;
+  padding-bottom: 5px;
+}
+
+ul {
+  line-height: 1.7;
+}
+
+/* Imagens Gerais e Banner */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 .banner {
   width: 100%;
   height: 280px;
@@ -62,28 +86,13 @@ nav a:hover {
   border-radius: 4px;
 }
 
-/* Caixa Branca Principal (main) - Passo 6 e 7 do guião */
-main {
-  background-color: #ffffff;
-  margin: 15px 0;            /* MARGIN: afasta a caixa branca da imagem de cima e do footer em baixo */
-  padding: 25px 30px;        /* PADDING: dá espaço por dentro para o texto não colar às bordas */
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Sombra muito suave para dar relevo */
-}
-
-h2, h3 {
-  color: #7a1c1c;
-  border-bottom: 1px solid #ebe5d9;
-  padding-bottom: 5px;
-}
-
-/* Rodapé (footer) */
+/* Rodapé */
 footer {
   background-color: #2b1b17;
   color: #f5e6c8;
   text-align: center;
   padding: 12px;
-  border-radius: 0 0 10px 10px; /* Arredonda os cantos de baixo */
+  border-radius: 0 0 10px 10px;
   font-size: 0.9em;
 }
 
@@ -91,9 +100,62 @@ footer p {
   margin: 0;
 }
 
-/* =========================================
-   2. MULTIMÉDIA (Fotografias, Vídeo e Poema)
-   ========================================= */
+/* =========================================================
+   2. PÁGINA LOCALIZAÇÃO (local.html)
+   ========================================================= */
+.localizacao-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.localizacao-texto {
+  flex: 1;
+  line-height: 1.7;
+  font-size: 1.05em;
+}
+
+.localizacao-container iframe {
+  flex: 1;
+  width: 100%;
+  height: 350px;
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   3. PÁGINA MULTIMÉDIA (multimedia.html)
+   ========================================================= */
+.ancoras a {
+  color: #7a1c1c;
+  font-weight: bold;
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+.ancoras a:hover {
+  text-decoration: underline;
+}
+
+/* Estrutura e cores das secções de 100vh */
+.sec-multimedia {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.sec-fotos  { background-color: #fdfbf7; }
+.sec-video  { background-color: #f3e8d6; }
+.sec-poesia { background-color: #eddcd2; }
+
+/* Galeria de Fotografias */
 .fotografias {
   display: flex;
   flex-wrap: wrap;
@@ -103,18 +165,19 @@ footer p {
 }
 
 .fotografias img {
-  width: 200px !important;
-  height: 130px !important;
+  width: 200px;
+  height: 130px;
   object-fit: cover;
   border-radius: 15px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease; /* Pequeno zoom ao passar o rato (impressiona!) */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
 }
 
 .fotografias img:hover {
   transform: scale(1.05);
 }
 
+/* Vídeo YouTube */
 iframe {
   display: block;
   margin: 20px auto;
@@ -122,6 +185,7 @@ iframe {
   max-width: 100%;
 }
 
+/* Poema com :nth-child */
 .poema {
   max-width: 500px;
   margin: 20px auto;
@@ -129,7 +193,7 @@ iframe {
   background-color: #fdfbf7;
   border-left: 4px solid #7a1c1c;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .poema p:nth-child(odd) {
@@ -149,9 +213,111 @@ iframe {
   margin-bottom: 20px;
 }
 
-/* =========================================
-   3. INFORMAÇÕES (Tabela e Lista)
-   ========================================= */
+/* Fotografia Emblemática com Frase (position + vw) */
+.sec-emblematica {
+  position: relative;
+  width: 100%;
+  margin: 25px 0 10px 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sec-emblematica img {
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
+  display: block;
+  filter: brightness(65%);
+}
+
+.frase-emblematica {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  margin: 0;
+  text-align: center;
+  color: #f5e6c8;
+  font-size: 3vw;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* Vídeo de Fundo e Paralaxe */
+.sec-video-fundo {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  margin: 30px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sec-video-fundo video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.caixa-sobre-video {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(43, 27, 23, 0.75);
+  color: #f5e6c8;
+  padding: 25px 35px;
+  border-radius: 10px;
+  max-width: 550px;
+  text-align: center;
+  border: 1px solid #d4af37;
+}
+
+.caixa-sobre-video h3 {
+  color: #d4af37;
+  border-bottom: none;
+  margin-top: 0;
+}
+
+.sec-paralaxe {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+                    url("imagens/multimediaRoma5.jpg");
+  min-height: 75vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 30px 0 10px 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.caixa-paralaxe {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #2b1b17;
+  padding: 25px 35px;
+  border-radius: 10px;
+  max-width: 550px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.caixa-paralaxe h3 {
+  margin-top: 0;
+}
+
+/* =========================================================
+   4. PÁGINA INFORMAÇÕES (info.html - Tabela e Grid 2D)
+   ========================================================= */
 table {
   margin: 20px auto;
   border-collapse: separate;
@@ -163,216 +329,21 @@ table {
 
 th {
   background-color: #7a1c1c;
-  color: #f5e6c8; /* Cor 1 para th */
+  color: #f5e6c8;
   padding: 10px 15px;
 }
 
 td {
-  color: #2b1b17; /* Cor 2 para td */
+  color: #2b1b17;
   padding: 8px 15px;
   border: 1px solid #d5c5b3;
 }
 
-ul {
-  line-height: 1.7;
-}
-
-/* Garante que nenhuma imagem sai fora do ecrã */
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* =========================================
-   4. RESPONSIVIDADE PARA TELEMÓVEL (@media)
-   ========================================= */
-@media (max-width: 600px) {
-  body {
-    margin: 10px auto;
-    padding: 0 10px;
-  }
-
-  header h1 {
-    font-size: 1.6em;
-  }
-
-  /* Organiza os links do menu para não ficarem apertados no telemóvel */
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  nav a {
-    margin: 0 5px;
-    font-size: 0.95em;
-  }
-
-  /* Reduz o espaçamento interno da caixa branca em ecrãs pequenos */
-  main {
-    padding: 15px;
-  }
-
-  .banner {
-    height: 180px;
-  }
-
-  /* No telemóvel mostra 2 fotografias por linha na galeria */
-  .fotografias img {
-    width: calc(50% - 10px) !important;
-    height: 110px !important;
-  }
-
-  /* Ajusta a tabela de informações ao ecrã do telemóvel */
-  table {
-    width: 100%;
-    font-size: 0.85em;
-  }
-
-  th, td {
-    padding: 6px 8px;
-  }
-}
-
-/* =========================================
-   5. SECÇÕES DA PÁGINA MULTIMÉDIA (100vh e cores diferentes)
-   ========================================= */
-.ancoras a {
-  color: #7a1c1c;
-  font-weight: bold;
-  margin: 0 8px;
-  text-decoration: none;
-}
-
-.ancoras a:hover {
-  text-decoration: underline;
-}
-
-/* Faz cada secção ocupar a altura da janela e centra o conteúdo */
-.sec-multimedia {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 30px 20px;
-  margin: 20px 0;
-  border-radius: 10px;
-}
-
-/* Cores de fundo diferentes para cada secção (Requisito 1) */
-.sec-fotos {
-  background-color: #fdfbf7; /* Creme mármore muito suave */
-}
-
-.sec-video {
-  background-color: #f3e8d6; /* Dourado/Areia suave */
-}
-
-.sec-poesia {
-  background-color: #eddcd2; /* Terracota romano muito claro */
-}
-
-/* =========================================
-   6. FOTOGRAFIA EMBLEMÁTICA COM FRASE (Requisito 2a e 2b)
-   ========================================= */
-.sec-emblematica {
-  position: relative; /* Pai com position: relative */
-  width: 100%;
-  margin: 25px 0 10px 0;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.sec-emblematica img {
-  width: 100%;        /* Ocupa toda a largura (width: 100%) */
-  height: 75vh;       /* Boa altura no ecrã */
-  object-fit: cover;
-  display: block;
-  filter: brightness(65%); /* Escurece ligeiramente a foto para a frase brilhar */
-}
-
-.frase-emblematica {
-  position: absolute; /* Filho com position: absolute */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centra exatamente no meio da imagem */
-  width: 85%;
-  margin: 0;
-  text-align: center;
-  color: #f5e6c8;
-  font-size: 3vw;     /* Unidade vw: adapta o tamanho da letra à janela! */
-  font-weight: bold;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
-}
-
-/* Ajuste da imagem emblemática para telemóvel */
-@media (max-width: 600px) {
-  .sec-multimedia {
-    min-height: auto; /* No telemóvel adapta-se ao tamanho do conteúdo */
-    padding: 20px 10px;
-  }
-
-  .sec-emblematica img {
-    height: 45vh;
-  }
-
-  .frase-emblematica {
-    font-size: 5vw; /* Letra ligeiramente maior proporcionalmente em ecrãs pequenos */
-  }
-}
-
-/* =========================================
-   7. PÁGINA LOCALIZAÇÃO (Flexbox + @media)
-   ========================================= */
-
-/* 1. No PC: fica o texto ao lado do mapa */
-.localizacao-container {
-  display: flex;
-  flex-direction: row;      /* Coloca os elementos lado a lado */
-  align-items: center;      /* Alinha verticalmente ao centro */
-  gap: 30px;                /* Espaço entre o texto e o mapa */
-  margin-top: 20px;
-}
-
-.localizacao-texto {
-  flex: 1;                  /* Ocupa metade do espaço disponível */
-  line-height: 1.7;
-  font-size: 1.05em;
-}
-
-.localizacao-container iframe {
-  flex: 1;                  /* O mapa ocupa a outra metade do espaço */
-  width: 100%;
-  height: 350px;
-  margin: 0;                /* Remove a margem automática para alinhar bem no flex */
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* 2. No telemóvel (ecrãs até 768px): o texto fica por cima do mapa */
-@media (max-width: 768px) {
-  .localizacao-container {
-    flex-direction: column; /* Passa para coluna: texto em cima, mapa em baixo */
-    gap: 20px;
-  }
-
-  .localizacao-container iframe {
-    width: 100%;
-    height: 280px;
-  }
-}
-
-/* =========================================
-   8. PÁGINA INFORMAÇÕES (Layout 2D com CSS Grid)
-   ========================================= */
+/* Grelha 2D com espaços vazios (.) */
 .info-grid {
   display: grid;
-  /* 3 colunas com as proporções exatas da imagem do guião */
   grid-template-columns: 0.4fr 0.3fr 0.3fr;
   gap: 20px;
-  /* Mapa 2D das posições: os pontos (.) criam os ESPAÇOS VAZIOS pedidos! */
   grid-template-areas:
     "topo        topo         topo"
     "img-hero    tabela       tabela"
@@ -381,7 +352,6 @@ img {
   align-items: start;
 }
 
-/* Ligação de cada elemento à sua posição específica na grelha */
 .area-topo {
   grid-area: topo;
   background-color: #fdfbf7;
@@ -441,8 +411,79 @@ img {
   border-top: 4px solid #d4af37;
 }
 
-/* No telemóvel: passa tudo para 1 única coluna para continuar 100% responsivo */
+/* =========================================================
+   5. RESPONSIVIDADE PARA TELEMÓVEL (Todas as páginas num só @media)
+   ========================================================= */
 @media (max-width: 768px) {
+  /* Estrutura Geral */
+  body {
+    margin: 10px auto;
+    padding: 0 10px;
+  }
+
+  header h1 {
+    font-size: 1.6em;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav a {
+    margin: 0 5px;
+    font-size: 0.95em;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  .banner {
+    height: 180px;
+  }
+
+  /* Localização */
+  .localizacao-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .localizacao-container iframe {
+    height: 280px;
+  }
+
+  /* Multimédia */
+  .sec-multimedia {
+    min-height: auto;
+    padding: 20px 10px;
+  }
+
+  .fotografias img {
+    width: calc(50% - 10px);
+    height: 110px;
+  }
+
+  .sec-emblematica img,
+  .sec-video-fundo,
+  .sec-paralaxe {
+    height: 45vh;
+    min-height: 45vh;
+  }
+
+  .frase-emblematica {
+    font-size: 5vw;
+  }
+
+  .caixa-sobre-video,
+  .caixa-paralaxe {
+    padding: 15px 20px;
+    margin: 0 10px;
+  }
+
+  /* Informações */
   .info-grid {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -453,99 +494,13 @@ img {
       "galeria"
       "nota";
   }
-}
 
-/* =========================================
-   9. VÍDEO DE FUNDO E EFEITO PARALAXE
-   ========================================= */
-
-/* --- Secção Vídeo de Fundo --- */
-.sec-video-fundo {
-  position: relative;
-  width: 100%;
-  height: 75vh;
-  margin: 30px 0;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sec-video-fundo video {
-  position: absolute; /* Mantém o vídeo preso apenas dentro desta secção */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;  /* Corta o vídeo sem o deformar para cobrir a secção toda */
-  z-index: 1;
-}
-
-.caixa-sobre-video {
-  position: relative;
-  z-index: 2;         /* Coloca a caixa de texto por cima do vídeo */
-  background-color: rgba(43, 27, 23, 0.75); /* Fundo escuro semi-transparente */
-  color: #f5e6c8;
-  padding: 25px 35px;
-  border-radius: 10px;
-  max-width: 550px;
-  text-align: center;
-  border: 1px solid #d4af37;
-}
-
-.caixa-sobre-video h3 {
-  color: #d4af37;
-  border-bottom: none;
-  margin-top: 0;
-}
-
-/* --- Secção Efeito Paralaxe --- */
-.sec-paralaxe {
-  /* Usa uma das tuas imagens de Roma como fundo */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-                    url("imagens/multimediaRoma5.jpg");
-  min-height: 75vh;
-
-  /* O SEGREDO DO PARALAXE: fixa a imagem no ecrã enquanto fazes scroll! */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  margin: 30px 0 10px 0;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.caixa-paralaxe {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #2b1b17;
-  padding: 25px 35px;
-  border-radius: 10px;
-  max-width: 550px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.caixa-paralaxe h3 {
-  margin-top: 0;
-}
-
-/* Ajuste para telemóvel */
-@media (max-width: 600px) {
-  .sec-video-fundo,
-  .sec-paralaxe {
-    height: 50vh;
-    min-height: 50vh;
+  table {
+    width: 100%;
+    font-size: 0.85em;
   }
 
-  .caixa-sobre-video,
-  .caixa-paralaxe {
-    padding: 15px 20px;
-    margin: 0 10px;
+  th, td {
+    padding: 6px 8px;
   }
 }
