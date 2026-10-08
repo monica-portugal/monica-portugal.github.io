@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laboratório de Eventos</title>
+    <!-- Ligação ao ficheiro CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Laboratório de Interações</h1>
+      <p>Explora os 5 eventos do rato nesta página!</p>
+    </header>
+
+    <main>
+      <!-- EVENTO 1: onclick (Contador) -->
+      <section class="cartao">
+        <h2 id="contador-texto">Contador de Cliques: 0</h2>
+        <button onclick="incrementarContador()" id="btn-contador">
+          Clica-me para contar!
+        </button>
+      </section>
+
+      <!-- EVENTO 2: ondblclick -->
+      <section class="cartao">
+        <h2 id="db-texto">Teste de Duplo Clique</h2>
+        <button ondblclick="mudarCorDuplo()" id="btn-duplo">
+          Clica duas vezes rápido!
+        </button>
+      </section>
+
+      <!-- EVENTOS 3 e 4: onmouseover e onmouseout -->
+      <section class="cartao">
+        <h2 id="img-texto">Passa o rato na imagem</h2>
+        <img
+          src="images/imagesL4.jpg"
+          alt="A minha fotografia"
+          id="imagem-magica"
+          onmouseover="aumentarImagem()"
+          onmouseout="diminuirImagem()"
+        />
+      </section>
+
+      <!-- EVENTO 5: onmousemove -->
+      <section
+        class="cartao area-movimento"
+        onmousemove="rastrearMovimento(event)"
+      >
+        <h2>Área de Movimento</h2>
+        <p id="movimento-texto">Move o rato aqui dentro...</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Desenvolvido para o Lab 4 - JavaScript e Eventos de Rato</p>
+    </footer>
+
+    <!-- Ligação ao ficheiro JavaScript -->
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
