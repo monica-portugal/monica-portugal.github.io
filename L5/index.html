@@ -8,16 +8,134 @@
   <body>
     <main>
       <p id="passagem">1.Passa por aqui!</p>
-      <p id="texto colorido">2.Pinat-me!</p>
-      <button id="vermelho">Red</button>
-      <button id="verde">Green</button>
-      <button id="azul">Blue</button>
+
+      <p id="texto-colorido">2. Pinta-me</p>
+      <button class="color" data-color="pink" id="rosa">Pink</button>
+      <button class="color" data-color="orange" id="laranja">Orange</button>
+      <button class="color" data-color="purple" id="roxo">Purple</button>
+
       <p id="escrever texto">3.Experimenta escrever...</p>
       <input type="text" id="resposta" />
-      <p id="cor em ingles">4.Escolha uma cor em inglês</p>
-      <input type="text" id="resposta ingles" />
-      <button>submeter</button>
-      <p>5. <button>Conta!</button> <span id="numero contador">0</span></p>
+
+      <p>4. Escolha uma cor:</p>
+      <select id="resposta-ingles">
+        <option value="white">White</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
+      </select>
+
+      <p>
+        5.
+        <button id="btn-incrementar">Incrementar</button>
+        <button id="btn-decrementar">Decrementar</button>
+        <button id="btn-reiniciar">Reiniciar</button>
+        <span id="numero-contador">0</span>
+      </p>
+
+      <form id="form-utilizador">
+        6.
+        <input type="text" id="input-nome" placeholder="insira o seu nome" />
+        <input type="text" id="input-idade" placeholder="Insira a sua idade" />
+        <input type="submit" value="Submit" />
+      </form>
+      <p id="resultado-form" style="font-weight: bold"></p>
+
+      <p id="automatic-counter">7. Automatic Counter: 0</p>
     </main>
+
+    <script>
+      // 1
+      const passarPorCima = document.getElementById("passagem");
+      passarPorCima.addEventListener("mouseover", function () {
+        passarPorCima.textContent = "1. Obrigada por passares!";
+      });
+
+      passarPorCima.addEventListener("mouseout", function () {
+        passarPorCima.textContent = "1.Passa por aqui!";
+      });
+
+      // 2
+      const pintar = document.getElementById("texto-colorido");
+      document.querySelectorAll("button.color").forEach((botao) => {
+        botao.addEventListener("click", () => {
+          const cor = botao.dataset.color;
+          pintar.style.color = cor;
+        });
+      });
+
+      // 3
+      const escrever = document.getElementById("resposta");
+      const cores = ["salmon", "lightblue", "lightgreen", "pink"];
+      let indiceCor = 0;
+
+      escrever.addEventListener("input", function () {
+        escrever.style.backgroundColor = cores[indiceCor];
+        indiceCor = (indiceCor + 1) % cores.length;
+      });
+
+      // 4 (Atualizado com o select, change e this)
+      const selectCor = document.getElementById("resposta-ingles");
+      selectCor.addEventListener("change", function () {
+        document.body.style.backgroundColor = this.value;
+      });
+
+      // 5
+      if (!localStorage.getItem("counter")) {
+        localStorage.setItem("counter", 0);
+      }
+
+      const numContador = document.getElementById("numero-contador");
+      numContador.textContent = localStorage.getItem("counter");
+
+      const atualizarContador = (novoValor) => {
+        localStorage.setItem("counter", novoValor);
+        numContador.textContent = novoValor;
+      };
+
+      document
+        .getElementById("btn-incrementar")
+        .addEventListener("click", () => {
+          let atual = Number(localStorage.getItem("counter"));
+          atual++;
+          atualizarContador(atual);
+        });
+
+      document
+        .getElementById("btn-decrementar")
+        .addEventListener("click", () => {
+          let atual = Number(localStorage.getItem("counter"));
+          atual--;
+          atualizarContador(atual);
+        });
+
+      document.getElementById("btn-reiniciar").addEventListener("click", () => {
+        atualizarContador(0);
+      });
+      // 6
+      const meuFormulario = document.getElementById("form-utilizador");
+      const inputNome = document.getElementById("input-nome");
+      const inputIdade = document.getElementById("input-idade");
+      const resultadoForm = document.getElementById("resultado-form");
+
+      meuFormulario.onsubmit = (e) => {
+        e.preventDefault(); // Evita que a página recarregue
+        const nome = inputNome.value;
+        const idade = inputIdade.value;
+        resultadoForm.textContent = "Olá, o " + nome + " tem " + idade + "!";
+      };
+
+      // 7
+      let autoCount = 0;
+      const autoCounterText = document.getElementById("automatic-counter");
+
+      function count() {
+        autoCount++;
+        autoCounterText.textContent = "7. Automatic Counter: " + autoCount;
+      }
+
+      setInterval(count, 1000);
+    </script>
   </body>
 </html>
